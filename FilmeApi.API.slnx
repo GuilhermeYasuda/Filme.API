@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Project Path="FilmeApi.API/FilmeApi.API.csproj" />
 </Solution>
