@@ -1,4 +1,6 @@
+using FilmeApi.API.Endpoints;
 using FilmeApi.API.Persistence;
+using FilmeApi.API.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -12,6 +14,8 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<FilmeDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddTransient<IFilmeService, FilmeService>();
 
 var app = builder.Build();
 
@@ -36,6 +40,8 @@ app.UseHttpsRedirection();
 // Map endpoints
 app.MapGet("/", () => "Hello World!")
    .Produces<string>(200);
+
+app.MapFilmeEndpoints();
 
 app.UseAuthorization();
 

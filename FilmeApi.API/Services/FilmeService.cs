@@ -51,7 +51,7 @@ namespace FilmeApi.API.Services
                 .ToListAsync();
         }
 
-        public async Task<FilmeDto?> GetFilmeDtoAsync(Guid id)
+        public async Task<FilmeDto?> GetFilmeByIdAsync(Guid id)
         {
             var filme = await _dbContext.Filmes
                             .AsNoTracking()
