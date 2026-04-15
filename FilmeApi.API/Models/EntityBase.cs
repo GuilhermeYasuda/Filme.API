@@ -1,4 +1,4 @@
-﻿namespace Filme.API.Models
+﻿namespace FilmeApi.API.Models
 {
     public abstract class EntityBase
     {

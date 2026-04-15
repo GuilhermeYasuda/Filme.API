@@ -1,3 +1,5 @@
+using FilmeApi.API.Persistence;
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<FilmeDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -21,7 +26,7 @@ app.UseHttpsRedirection();
 
 // Map endpoints
 app.MapGet("/", () => "Hello World!")
-   .Produces(200, typeof(string));
+   .Produces<string>(200);
 
 app.UseAuthorization();
 

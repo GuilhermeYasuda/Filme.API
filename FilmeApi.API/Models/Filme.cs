@@ -1,4 +1,4 @@
-﻿namespace Filme.API.Models
+﻿namespace FilmeApi.API.Models
 {
     public sealed class Filme : EntityBase
     {
