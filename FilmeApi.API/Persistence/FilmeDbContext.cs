@@ -29,7 +29,7 @@ namespace FilmeApi.API.Persistence
                         sampleFilme = Filme.Create(
                             "Godzilla e Kong: O Novo Império",
                             "Ação, Aventura, Ficção Científica",
-                            new DateTimeOffset(new DateTime(2024, 3, 28)),
+                            new DateTimeOffset(new DateTime(2024, 3, 28), TimeSpan.Zero),
                             6.2
                         );
 
@@ -49,7 +49,7 @@ namespace FilmeApi.API.Persistence
                         sampleFilme = Filme.Create(
                             "Godzilla e Kong: O Novo Império",
                             "Ação, Aventura, Ficção Científica",
-                            new DateTimeOffset(new DateTime(2024, 3, 28)),
+                            new DateTimeOffset(new DateTime(2024, 3, 28), TimeSpan.Zero),
                             6.2
                         );
 

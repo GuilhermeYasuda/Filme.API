@@ -37,7 +37,7 @@ namespace FilmeApi.API.Persistence.Configurations
 
             builder.Property(f => f.DtUltimaAlteracao)
                 .IsRequired()
-                .ValueGeneratedOnAddOrUpdate();
+                .ValueGeneratedOnUpdate();
 
             // Adiciona índices para melhorar a performance de consultas
             builder.HasIndex(m => m.Titulo);
